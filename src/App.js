@@ -1,23 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import List from "./components/List";
+import React, { useState } from "react";
+
+const defaultUsers = [
+  {
+    id: 1,
+    name: "Leanne dGraham",
+    username: "Bret",
+    email: "test@gmail.com",
+  },
+  {
+    id: 2,
+    name: "Leanne sdGraham",
+    username: "Bret",
+    email: "test@gmail.com",
+  },
+  {
+    id: 3,
+    name: "Leanne sdGraham",
+    username: "Bret",
+    email: "test@gmail.com",
+  },
+  {
+    id: 4,
+    name: "Leanne Grdfdfaham",
+    username: "Bret",
+    email: "test@gmail.com",
+  },
+  {
+    id: 5,
+    name: "Leanne Grfdfdfaham",
+    username: "Bret",
+    email: "test@gmail.com",
+  },
+];
 
 function App() {
+  const [users, setUsers] = useState(defaultUsers);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="flex justify-center mt-4">
+      <List users={users} setUsers={setUsers} />
     </div>
   );
 }
